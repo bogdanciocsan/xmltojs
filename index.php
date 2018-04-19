@@ -18,13 +18,11 @@ function download_page($path){
 $query = parse_url($_SERVER['QUERY_STRING']);
 $stack = [];
 
-echo $_SERVER['QUERY_STRING'];
-echo $argv;
-echo "space";
-
 if($query) {
   foreach ($query as &$value) {
+    echo "first line";
     echo $value;
+    echo "second line";
     $file = download_page($value);
     $xml=simplexml_load_string($file);
     array_push($stack, array(
