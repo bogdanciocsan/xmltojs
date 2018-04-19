@@ -19,6 +19,8 @@ $domain = $_GET["source"];
 $guid = $_GET["guid"];
 $stack = [];
 
+echo $guid;
+
 if($domain && $guid) {
   foreach ($guid as &$value) {
     $file = download_page($domain . $value);
