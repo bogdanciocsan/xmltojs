@@ -18,6 +18,9 @@ function download_page($path){
 $query = parse_url($_SERVER['QUERY_STRING']);
 $stack = [];
 
+echo $_SERVER['QUERY_STRING'];
+echo $argv;¨
+echo "space";
 
 if($query) {
   foreach ($query as &$value) {
