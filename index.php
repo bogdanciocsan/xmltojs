@@ -15,13 +15,13 @@ function download_page($path){
     return $retValue;
 }
 // Open the file using the HTTP headers set above
-$links = parse_url($_SERVER['QUERY_STRING']);
+$query = parse_url($_SERVER['QUERY_STRING']);
 $stack = [];
 
-echo $links;
 
-if($links) {
-  foreach ($links as &$value) {
+if($query) {
+  foreach ($query as &$value) {
+    echo $value;
     $file = download_page($value);
     $xml=simplexml_load_string($file);
     array_push($stack, array(
@@ -39,6 +39,6 @@ if($links) {
 }
 else {
   echo "i received:";
-  echo json_encode($_SERVER['QUERY_STRING']);
+  echo json_encode(query);
   echo "missing links parameter";
 }
