@@ -20,8 +20,6 @@ $guid = $_GET["guid"];
 $stack = [];
 $post = file_get_contents('php://input');
 
-echo json_encode(array($guid, $domain));
-echo json_encode($post);
 
 if($domain && $guid) {
   foreach ($guid as &$value) {
@@ -41,5 +39,6 @@ if($domain && $guid) {
   echo json_encode($stack);
 }
 else {
+  echo json_encode($_GET);
   echo "missing source and guid params";
 }
