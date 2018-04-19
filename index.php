@@ -19,7 +19,7 @@ $links = $_GET["link"];
 $stack = [];
 
 if($links {
-  foreach ($link as &$value) {
+  foreach ($links as &$value) {
     $file = download_page($value);
     $xml=simplexml_load_string($file);
     array_push($stack, array(
