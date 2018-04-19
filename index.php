@@ -15,14 +15,13 @@ function download_page($path){
     return $retValue;
 }
 // Open the file using the HTTP headers set above
-$links = $_SERVER['QUERY_STRING'];
+$links = parse_url($_SERVER['QUERY_STRING']);
 $stack = [];
 
 echo $links;
 
 if($links) {
   foreach ($links as &$value) {
-    echo $value;
     $file = download_page($value);
     $xml=simplexml_load_string($file);
     array_push($stack, array(
