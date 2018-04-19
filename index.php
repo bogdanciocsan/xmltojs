@@ -15,7 +15,7 @@ function download_page($path){
     return $retValue;
 }
 // Open the file using the HTTP headers set above
-$links = $_SERVER['QUERY_STRING']["link"];
+$links = $_SERVER['QUERY_STRING'];
 $stack = [];
 
 echo $links;
