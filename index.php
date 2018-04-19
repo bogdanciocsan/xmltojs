@@ -18,9 +18,10 @@ function download_page($path){
 $domain = $_GET["source"];
 $guid = $_GET["guid"];
 $stack = [];
+$post = file_get_contents('php://input');
 
 echo json_encode(array($guid, $domain));
-echo json_encode($_POST);
+echo json_encode($post);
 
 if($domain && $guid) {
   foreach ($guid as &$value) {
