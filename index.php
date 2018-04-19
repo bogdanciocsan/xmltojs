@@ -39,5 +39,5 @@ if($domain && $guid) {
   echo json_encode($stack);
 }
 else {
-  echo "missing domain and guid params";
+  echo "missing source and guid params";
 }
