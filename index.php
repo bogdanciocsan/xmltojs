@@ -19,7 +19,7 @@ $domain = $_GET["source"];
 $guid = $_GET["guid"];
 $stack = [];
 
-echo $guid;
+echo json_encode($_GET);
 
 if($domain && $guid) {
   foreach ($guid as &$value) {
