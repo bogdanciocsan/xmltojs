@@ -15,19 +15,16 @@ function download_page($path){
     return $retValue;
 }
 // Open the file using the HTTP headers set above
-$domain = $_GET["source"];
-$guid = $_GET["guid"];
+$links = $_GET["links"];
 $stack = [];
-$post = file_get_contents('php://input');
-
 
 if($domain && $guid) {
   foreach ($guid as &$value) {
-    $file = download_page($domain . $value);
+    $file = download_page($value);
     $xml=simplexml_load_string($file);
     array_push($stack, array(
        "name" => (string)$xml->SagsNr, 
-       "guid" => $value,
+       "link" => $value,
        "image" => (string)$xml->Media->Fotos->Foto[0]->ProtectedFilename,
        "title" => (string)$xml->Marketing->AnnonceOverskrift,
        "labelText" => (string)$xml->Marketing->LabelTekst->Tekst,
@@ -39,6 +36,7 @@ if($domain && $guid) {
   echo json_encode($stack);
 }
 else {
+  echo "i received:";
   echo json_encode($_GET);
-  echo "missing source and guid params";
+  echo "missing links parameter";
 }
