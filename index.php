@@ -19,7 +19,7 @@ $query = parse_url($_SERVER['QUERY_STRING']);
 $stack = [];
 
 echo $_SERVER['QUERY_STRING'];
-echo $argv;¨
+echo $argv;
 echo "space";
 
 if($query) {
