@@ -18,6 +18,8 @@ function download_page($path){
 $links = $_SERVER['QUERY_STRING']["link"];
 $stack = [];
 
+echo $links;
+
 if($links) {
   foreach ($links as &$value) {
     $file = download_page($value);
