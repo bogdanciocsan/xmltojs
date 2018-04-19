@@ -22,6 +22,7 @@ echo $links;
 
 if($links) {
   foreach ($links as &$value) {
+    echo $value;
     $file = download_page($value);
     $xml=simplexml_load_string($file);
     array_push($stack, array(
