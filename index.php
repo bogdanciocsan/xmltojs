@@ -37,6 +37,6 @@ if($links) {
 }
 else {
   echo "i received:";
-  echo json_encode($_GET);
+  echo json_encode($_SERVER['QUERY_STRING']);
   echo "missing links parameter";
 }
