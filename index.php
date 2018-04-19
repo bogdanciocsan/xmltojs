@@ -18,8 +18,8 @@ function download_page($path){
 $links = $_GET["links"];
 $stack = [];
 
-if($domain && $guid) {
-  foreach ($guid as &$value) {
+if($links) {
+  foreach ($links as &$value) {
     $file = download_page($value);
     $xml=simplexml_load_string($file);
     array_push($stack, array(
