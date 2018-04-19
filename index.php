@@ -18,7 +18,7 @@ function download_page($path){
 $links = $_GET["link"];
 $stack = [];
 
-if($links {
+if($links) {
   foreach ($links as &$value) {
     $file = download_page($value);
     $xml=simplexml_load_string($file);
