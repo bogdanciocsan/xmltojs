@@ -20,6 +20,7 @@ $guid = $_GET["guid"];
 $stack = [];
 
 echo json_encode(array($guid, $domain));
+echo json_encode($_POST);
 
 if($domain && $guid) {
   foreach ($guid as &$value) {
