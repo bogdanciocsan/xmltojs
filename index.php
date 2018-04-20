@@ -1,4 +1,5 @@
 <?php
+header("Access-Control-Allow-Origin: *");
 // Load the XML source
 $xml = new DOMDocument;
 // Create a stream
