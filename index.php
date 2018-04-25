@@ -27,8 +27,10 @@ if($links) {
        "name" => (string)$xml->SagsNr, 
        "link" => $value,
        "image" => (string)$xml->Media->Fotos->Foto[0]->ProtectedFilename,
+       "images" => $xml->Media->Fotos,
        "title" => (string)$xml->Marketing->AnnonceOverskrift,
        "labelText" => (string)$xml->Marketing->LabelTekst->Tekst,
+       "description" => (string)$xml->Marketing->AnnonceTekst,
        "finance" => $xml->Finansiering,
        "property" => $xml->Ejendom
     ));
